@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[构建 GitLab 服务器 ( Ubuntu 16.04 )]]></title>
+    <url>%2F2017%2F08%2F20%2Fbuild-gitlab%2F</url>
+    <content type="text"><![CDATA[Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or configure a custom SMTP server and configure it as an SMTP server. On CentOS, the commands below will also open HTTP and SSH access in the system firewall. 1sudo apt-get install curl openssh-server ca-certificates postfix -y 2. Add the GitLab package server and install the package12curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bashsudo apt-get install gitlab-ce 3. Configure and start GitLab1sudo gitlab-ctl reconfigure 4. Browse to the hostname and loginOn your first visit, you’ll be redirected to a password reset screen to provide the password for the initial administrator account. Enter your desired password and you’ll be redirected back to the login screen. The default account’s username is root. Provide the password you created earlier and login. After login you can change the username if you wish. 5. Gitlab congfigureAdd the following configuration information to /etc/gitlab/gitlab.rb and run gitlab-ctl reconfigure. 5.1. Configuring the external URL for GitLabIn order for GitLab to display correct repository clone links to your users it needs to know the URL under which it is reached by your users, e.g. http://gitlab.example.com. Add or edit the following line in /etc/gitlab/gitlab.rb: 1external_url "http://xxxx.xx.xxx.xxx" 或者 123external_url "http://xxx.gitlab.com"# 需要设置 hosts# xxxx.xx.xxx.xxx xxx.gitlab.com Run sudo gitlab-ctl reconfigure for the change to take effect. 5.2. Email configure about SMTP当我们需要使用密码找回等邮件提醒服务。需要配置gitlab的配置文件 12345678910111213141516171819# vim /etc/gitlab/gitlab.rbgitlab_rails['time_zone'] = 'Asia/Shanghai'### Email Settingsgitlab_rails['gitlab_email_enabled'] = truegitlab_rails['gitlab_email_from'] = 'xxxxxx@outlook.com'gitlab_rails['gitlab_email_display_name'] = 'xxxooo'### GitLab email server settings# outlook emailgitlab_rails['smtp_enable'] = truegitlab_rails['smtp_address'] = "smtp-mail.outlook.com"gitlab_rails['smtp_port'] = 587gitlab_rails['smtp_user_name'] = "xxxxxx@outlook.com"gitlab_rails['smtp_password'] = "your password"gitlab_rails['smtp_domain'] = "smtp-mail.outlook.com"gitlab_rails['smtp_authentication'] = "login"gitlab_rails['smtp_enable_starttls_auto'] = truegitlab_rails['smtp_openssl_verify_mode'] = 'peer'user['git_user_email'] = "xxxxxx@outlook.com" 5.3. 设置 HTTPS后续补充]]></content>
+      <categories>
+        <category>Build</category>
+        <category>Code</category>
+      </categories>
+      <tags>
+        <tag>GitLab</tag>
+        <tag>Ubuntu</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2017%2F08%2F19%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

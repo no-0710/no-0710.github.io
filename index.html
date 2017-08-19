@@ -305,6 +305,169 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/build-gitlab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="No Time To Waiting">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/20/build-gitlab/" itemprop="url">构建 GitLab 服务器 ( Ubuntu 16.04 )</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T01:17:34+08:00">
+                2017-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Build/" itemprop="url" rel="index">
+                    <span itemprop="name">Build</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Build/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Build-Gitlab-On-Ubuntu-Server"><a href="#Build-Gitlab-On-Ubuntu-Server" class="headerlink" title="Build Gitlab On Ubuntu Server"></a>Build Gitlab On Ubuntu Server</h2><h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
+<p>On CentOS, the commands below will also open HTTP and SSH access in the system firewall.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix -y</div></pre></td></tr></table></figure>
+<h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</div><div class="line">sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
+<h4 id="3-Configure-and-start-GitLab"><a href="#3-Configure-and-start-GitLab" class="headerlink" title="3. Configure and start GitLab"></a>3. Configure and start GitLab</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure>
+<h4 id="4-Browse-to-the-hostname-and-login"><a href="#4-Browse-to-the-hostname-and-login" class="headerlink" title="4. Browse to the hostname and login"></a>4. Browse to the hostname and login</h4><p>On your first visit, you’ll be redirected to a password reset screen to provide the password for the initial administrator account. Enter your desired password and you’ll be redirected back to the login screen.</p>
+<p>The default account’s username is <strong>root</strong>. Provide the password you created earlier and login. After login you can change the username if you wish.</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/20/build-gitlab/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -466,14 +629,32 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>

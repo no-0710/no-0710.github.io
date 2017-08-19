@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="GitLab,Ubuntu," />
 
 
 
@@ -98,17 +98,18 @@
 
 
 
-<meta name="description" content="A person has at least one dream, there is a reason to be strong.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="All categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
+<meta name="keywords" content="GitLab,Ubuntu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="构建 GitLab 服务器 ( Ubuntu 16.04 )">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/build-gitlab/index.html">
 <meta property="og:site_name" content="No Time To Waiting">
-<meta property="og:description" content="A person has at least one dream, there is a reason to be strong.">
+<meta property="og:description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T15:43:08.069Z">
+<meta property="og:updated_time" content="2017-08-19T17:33:43.965Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All categories">
-<meta name="twitter:description" content="A person has at least one dream, there is a reason to be strong.">
+<meta name="twitter:title" content="构建 GitLab 服务器 ( Ubuntu 16.04 )">
+<meta name="twitter:description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
 
 
 
@@ -137,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/20/build-gitlab/"/>
 
 
 
 
 
-  <title>All categories | No Time To Waiting</title>
+  <title>构建 GitLab 服务器 ( Ubuntu 16.04 ) | No Time To Waiting</title>
   
 
 
@@ -292,40 +293,195 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/build-gitlab/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="No Time To Waiting">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">All categories</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
-                目前共计 2 个分类
-            </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Build/">Build</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Build/Code/">Code</a><span class="category-list-count">1</span></li></ul></li></ul>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">构建 GitLab 服务器 ( Ubuntu 16.04 )</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T01:17:34+08:00">
+                2017-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Build/" itemprop="url" rel="index">
+                    <span itemprop="name">Build</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Build/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Build-Gitlab-On-Ubuntu-Server"><a href="#Build-Gitlab-On-Ubuntu-Server" class="headerlink" title="Build Gitlab On Ubuntu Server"></a>Build Gitlab On Ubuntu Server</h2><h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
+<p>On CentOS, the commands below will also open HTTP and SSH access in the system firewall.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix -y</div></pre></td></tr></table></figure>
+<h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</div><div class="line">sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
+<h4 id="3-Configure-and-start-GitLab"><a href="#3-Configure-and-start-GitLab" class="headerlink" title="3. Configure and start GitLab"></a>3. Configure and start GitLab</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo gitlab-ctl reconfigure</div></pre></td></tr></table></figure>
+<h4 id="4-Browse-to-the-hostname-and-login"><a href="#4-Browse-to-the-hostname-and-login" class="headerlink" title="4. Browse to the hostname and login"></a>4. Browse to the hostname and login</h4><p>On your first visit, you’ll be redirected to a password reset screen to provide the password for the initial administrator account. Enter your desired password and you’ll be redirected back to the login screen.</p>
+<p>The default account’s username is <strong>root</strong>. Provide the password you created earlier and login. After login you can change the username if you wish.</p>
+<a id="more"></a>
+<h4 id="5-Gitlab-congfigure"><a href="#5-Gitlab-congfigure" class="headerlink" title="5.  Gitlab congfigure"></a>5.  Gitlab congfigure</h4><p>Add the following configuration information to <code>/etc/gitlab/gitlab.rb</code>  and run <code>gitlab-ctl reconfigure</code>.</p>
+<h5 id="5-1-Configuring-the-external-URL-for-GitLab"><a href="#5-1-Configuring-the-external-URL-for-GitLab" class="headerlink" title="5.1. Configuring the external URL for GitLab"></a>5.1. Configuring the external URL for GitLab</h5><p>In order for GitLab to display correct repository clone links to your users it needs to know the URL under which it is reached by your users, e.g. <code>http://gitlab.example.com</code>. Add or edit the following line in <code>/etc/gitlab/gitlab.rb</code>:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">external_url "http://xxxx.xx.xxx.xxx"</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">external_url "http://xxx.gitlab.com"</div><div class="line"><span class="meta">#</span> 需要设置 hosts</div><div class="line"><span class="meta">#</span> xxxx.xx.xxx.xxx    xxx.gitlab.com</div></pre></td></tr></table></figure>
+<p>Run <code>sudo gitlab-ctl reconfigure</code> for the change to take effect.</p>
+<h5 id="5-2-Email-configure-about-SMTP"><a href="#5-2-Email-configure-about-SMTP" class="headerlink" title="5.2.  Email configure about SMTP"></a>5.2.  Email configure about SMTP</h5><p>当我们需要使用密码找回等邮件提醒服务。需要配置gitlab的配置文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> vim /etc/gitlab/gitlab.rb</div><div class="line">gitlab_rails['time_zone'] = 'Asia/Shanghai'</div><div class="line"><span class="meta">#</span>## Email Settings</div><div class="line">gitlab_rails['gitlab_email_enabled'] = true</div><div class="line">gitlab_rails['gitlab_email_from'] = 'xxxxxx@outlook.com'</div><div class="line">gitlab_rails['gitlab_email_display_name'] = 'xxxooo'</div><div class="line"><span class="meta">#</span>## GitLab email server settings</div><div class="line"><span class="meta">#</span> outlook email</div><div class="line">gitlab_rails['smtp_enable'] = true</div><div class="line">gitlab_rails['smtp_address'] = "smtp-mail.outlook.com"</div><div class="line">gitlab_rails['smtp_port'] = 587</div><div class="line">gitlab_rails['smtp_user_name'] = "xxxxxx@outlook.com"</div><div class="line">gitlab_rails['smtp_password'] = "your password"</div><div class="line">gitlab_rails['smtp_domain'] = "smtp-mail.outlook.com"</div><div class="line">gitlab_rails['smtp_authentication'] = "login"</div><div class="line">gitlab_rails['smtp_enable_starttls_auto'] = true</div><div class="line">gitlab_rails['smtp_openssl_verify_mode'] = 'peer'</div><div class="line"></div><div class="line">user['git_user_email'] = "xxxxxx@outlook.com"</div></pre></td></tr></table></figure>
+<h5 id="5-3-设置-HTTPS"><a href="#5-3-设置-HTTPS" class="headerlink" title="5.3. 设置 HTTPS"></a>5.3. 设置 HTTPS</h5><p>后续补充</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GitLab/" rel="tag"># GitLab</a>
+          
+            <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/19/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -358,8 +514,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg"
@@ -434,6 +599,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-Gitlab-On-Ubuntu-Server"><span class="nav-number">1.</span> <span class="nav-text">Build Gitlab On Ubuntu Server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Install-and-configure-the-necessary-dependencies"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Install and configure the necessary dependencies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Add-the-GitLab-package-server-and-install-the-package"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Add the GitLab package server and install the package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Configure-and-start-GitLab"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. Configure and start GitLab</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Browse-to-the-hostname-and-login"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Browse to the hostname and login</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Gitlab-congfigure"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.  Gitlab congfigure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-Configuring-the-external-URL-for-GitLab"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">5.1. Configuring the external URL for GitLab</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-Email-configure-about-SMTP"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">5.2.  Email configure about SMTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-设置-HTTPS"><span class="nav-number">1.0.5.3.</span> <span class="nav-text">5.3. 设置 HTTPS</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -562,10 +743,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
