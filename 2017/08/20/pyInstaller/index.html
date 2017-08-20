@@ -82,7 +82,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,pyInstall," />
 
 
 
@@ -98,17 +98,18 @@
 
 
 
-<meta name="description" content="A person has at least one dream, there is a reason to be strong.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="All tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="PyInstaller 打包 Python 应用程序案例1. Code structure123456789101112131415NodeSlave---|[D] conf              # configure folder   |--- slave.ini         # configure file   |---|[D] resource		 # resource folde">
+<meta name="keywords" content="python,pyInstall">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pyInstaller 打包 Python 程序">
+<meta property="og:url" content="http://yoursite.com/2017/08/20/pyInstaller/index.html">
 <meta property="og:site_name" content="Snippets">
-<meta property="og:description" content="A person has at least one dream, there is a reason to be strong.">
+<meta property="og:description" content="PyInstaller 打包 Python 应用程序案例1. Code structure123456789101112131415NodeSlave---|[D] conf              # configure folder   |--- slave.ini         # configure file   |---|[D] resource		 # resource folde">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T15:39:43.677Z">
+<meta property="og:updated_time" content="2017-08-20T00:42:10.350Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="All tags">
-<meta name="twitter:description" content="A person has at least one dream, there is a reason to be strong.">
+<meta name="twitter:title" content="pyInstaller 打包 Python 程序">
+<meta name="twitter:description" content="PyInstaller 打包 Python 应用程序案例1. Code structure123456789101112131415NodeSlave---|[D] conf              # configure folder   |--- slave.ini         # configure file   |---|[D] resource		 # resource folde">
 
 
 
@@ -137,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/20/pyInstaller/"/>
 
 
 
 
 
-  <title>All tags | Snippets</title>
+  <title>pyInstaller 打包 Python 程序 | Snippets</title>
   
 
 
@@ -292,40 +293,161 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/pyInstaller/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Snippets">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">All tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body han-init-context">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                目前共计 6 个标签
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/GitLab/" style="font-size: 12px; color: #ccc">GitLab</a> <a href="/tags/Ubuntu/" style="font-size: 12px; color: #ccc">Ubuntu</a> <a href="/tags/Ubuntu-SWAP/" style="font-size: 12px; color: #ccc">Ubuntu SWAP</a> <a href="/tags/mongoDB/" style="font-size: 12px; color: #ccc">mongoDB</a> <a href="/tags/pyInstall/" style="font-size: 12px; color: #ccc">pyInstall</a> <a href="/tags/python/" style="font-size: 12px; color: #ccc">python</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">pyInstaller 打包 Python 程序</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T08:40:20+08:00">
+                2017-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
       
       
+
+      
+        <h3 id="PyInstaller-打包-Python-应用程序案例"><a href="#PyInstaller-打包-Python-应用程序案例" class="headerlink" title="PyInstaller 打包 Python 应用程序案例"></a>PyInstaller 打包 Python 应用程序案例</h3><h4 id="1-Code-structure"><a href="#1-Code-structure" class="headerlink" title="1. Code structure"></a>1. Code structure</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">NodeSlave</div><div class="line">---|[D] conf              # configure folder</div><div class="line">   |--- slave.ini         # configure file</div><div class="line">   |</div><div class="line">---|[D] resource		 # resource folder</div><div class="line">   |--- node.ico		 # icon file [ 128*128 ] </div><div class="line">   |</div><div class="line">---|[D] slave 			 # python package</div><div class="line">---|[D] build			 # pyInstaller generate build folder automatically</div><div class="line">---|[D] dist			 # pyInstaller generate dist folder automatically</div><div class="line">   |---[D] slave_client   # pyInstaller generate program folder</div><div class="line">   |</div><div class="line">---| slave_client.py      # program entrance: main()</div><div class="line">---| slave_client.spec    # pyInstaller spec temporary file</div><div class="line">---| readme.md			 # read me file</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h4 id="2-Build-executable-files"><a href="#2-Build-executable-files" class="headerlink" title="2. Build executable files"></a>2. Build executable files</h4><ol>
+<li><p>使用 <code>virtualenv</code> 构建纯净的 Python开发环境。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 安装 virtualenv</span></div><div class="line"><span class="meta">$</span><span class="bash"> pip install virtualenv</span></div><div class="line"><span class="meta">#</span><span class="bash"> 创建一个虚拟环境</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> D:\Coder\PythonVirtualEnv</span></div><div class="line"><span class="meta">#</span><span class="bash"> 克隆一份Python环境至 D:\Coder\PythonVirtualEnv\venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> virtualenv venv</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在虚拟环境中，使用 <code>pip install xxxx</code> 安装项目依赖。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> cmd 执行批处理文件进入虚拟环境 venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> D:\Coder\PythonVirtualEnv</span></div><div class="line"><span class="meta">$</span><span class="bash"> venv\Scripts\activate.bat</span></div><div class="line">(venv) $ pip install kazoo ...</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>pyInstaller</code> 打包程序。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 在虚拟环境 venv 中执行打包操作</span></div><div class="line">(venv) $ cd E:\Coder\SMasterManager\NodeSlave</div><div class="line"><span class="meta">#</span><span class="bash"> 执行打包操作</span></div><div class="line">(venv) $ pyinstaller --add-data="conf/slave.ini;conf" ^</div><div class="line">			--icon=resource/node.ico ^</div><div class="line">			slave_client.py</div></pre></td></tr></table></figure></li>
+</ol>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/pyInstall/" rel="tag"># pyInstall</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/20/linux-swap-settings/" rel="next" title="linux swap settings">
+                <i class="fa fa-chevron-left"></i> linux swap settings
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/20/mongodb-creat/" rel="prev" title="MongoDB 单节点搭建">
+                MongoDB 单节点搭建 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -358,8 +480,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg"
@@ -434,6 +565,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#PyInstaller-打包-Python-应用程序案例"><span class="nav-number">1.</span> <span class="nav-text">PyInstaller 打包 Python 应用程序案例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Code-structure"><span class="nav-number">1.1.</span> <span class="nav-text">1. Code structure</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Build-executable-files"><span class="nav-number">1.2.</span> <span class="nav-text">2. Build executable files</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -562,10 +709,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
 
-  
+
 
   
 
