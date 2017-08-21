@@ -405,13 +405,13 @@
 <a id="more"></a>
 <h4 id="2-Build-executable-files"><a href="#2-Build-executable-files" class="headerlink" title="2. Build executable files"></a>2. Build executable files</h4><ol>
 <li><p>使用 <code>virtualenv</code> 构建纯净的 Python开发环境。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 安装 virtualenv</span></div><div class="line"><span class="meta">$</span><span class="bash"> pip install virtualenv</span></div><div class="line"><span class="meta">#</span><span class="bash"> 创建一个虚拟环境</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> D:\Coder\PythonVirtualEnv</span></div><div class="line"><span class="meta">#</span><span class="bash"> 克隆一份Python环境至 D:\Coder\PythonVirtualEnv\venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> virtualenv venv</span></div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 安装 virtualenv</div><div class="line"><span class="meta">$</span> pip install virtualenv</div><div class="line"><span class="meta">#</span> 创建一个虚拟环境</div><div class="line"><span class="meta">$</span> cd D:\Coder\PythonVirtualEnv</div><div class="line"><span class="meta">#</span> 克隆一份Python环境至 D:\Coder\PythonVirtualEnv\venv</div><div class="line"><span class="meta">$</span> virtualenv venv</div></pre></td></tr></table></figure>
 </li>
 <li><p>在虚拟环境中，使用 <code>pip install xxxx</code> 安装项目依赖。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> cmd 执行批处理文件进入虚拟环境 venv</span></div><div class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> D:\Coder\PythonVirtualEnv</span></div><div class="line"><span class="meta">$</span><span class="bash"> venv\Scripts\activate.bat</span></div><div class="line">(venv) $ pip install kazoo ...</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> cmd 执行批处理文件进入虚拟环境 venv</div><div class="line"><span class="meta">$</span> cd D:\Coder\PythonVirtualEnv</div><div class="line"><span class="meta">$</span> venv\Scripts\activate.bat</div><div class="line">(venv) $ pip install kazoo ...</div></pre></td></tr></table></figure>
 </li>
 <li><p>使用 <code>pyInstaller</code> 打包程序。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 在虚拟环境 venv 中执行打包操作</span></div><div class="line">(venv) $ cd E:\Coder\SMasterManager\NodeSlave</div><div class="line"><span class="meta">#</span><span class="bash"> 执行打包操作</span></div><div class="line">(venv) $ pyinstaller --add-data="conf/slave.ini;conf" ^</div><div class="line">			--icon=resource/node.ico ^</div><div class="line">			slave_client.py</div></pre></td></tr></table></figure></li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 在虚拟环境 venv 中执行打包操作</div><div class="line">(venv) $ cd E:\Coder\SMasterManager\NodeSlave</div><div class="line"><span class="meta">#</span> 执行打包操作</div><div class="line">(venv) $ pyinstaller --add-data="conf/slave.ini;conf" ^</div><div class="line">			--icon=resource/node.ico ^</div><div class="line">			slave_client.py</div></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -556,7 +556,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
