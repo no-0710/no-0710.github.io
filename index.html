@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,6 +13,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -91,7 +98,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="http://oursqqcoj.bkt.clouddn.com/17-8-20/19413742.jpg?v=5.1.2" />
 
 
 
@@ -100,13 +107,13 @@
 
 <meta name="description" content="A person has at least one dream, there is a reason to be strong.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Snippets">
+<meta property="og:title" content="An episode of sb.&#39;s life">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Snippets">
+<meta property="og:site_name" content="An episode of sb.&#39;s life">
 <meta property="og:description" content="A person has at least one dream, there is a reason to be strong.">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Snippets">
+<meta name="twitter:title" content="An episode of sb.&#39;s life">
 <meta name="twitter:description" content="A person has at least one dream, there is a reason to be strong.">
 
 
@@ -115,7 +122,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -142,7 +149,7 @@
 
 
 
-  <title>Snippets</title>
+  <title>An episode of sb.'s life</title>
   
 
 
@@ -174,7 +181,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Snippets</span>
+        <span class="site-title">An episode of sb.'s life</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -314,7 +321,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
+      <meta itemprop="name" content="An episode of sb.'s life">
     </span>
 
     
@@ -347,6 +354,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -375,11 +404,11 @@
 
       
         
-          <h3 id="MongoDB-on-Ubuntu"><a href="#MongoDB-on-Ubuntu" class="headerlink" title="MongoDB on Ubuntu"></a>MongoDB on Ubuntu</h3><h4 id="1-单机-MongoDB-安装"><a href="#1-单机-MongoDB-安装" class="headerlink" title="1. 单机 MongoDB 安装"></a>1. 单机 MongoDB 安装</h4><p>MongoDB 提供了 linux 各发行版本 64 位的安装包，你可以在官网下载安装包。<br>下载地址：<a href="https://www.mongodb.com/download-center?ct=false#community" target="_blank" rel="external">https://www.mongodb.com/download-center?ct=false#community</a><br>下载完安装包，并解压 tgz（以下演示的是 64 位 ubuntu 上的安装）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 解压 mongoDB 压缩包</span></div><div class="line">root@das:/home/software# tar -zxvf mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz -C /home/tools/</div><div class="line">root@das:/home/software# mv /home/tools/mongodb-linux-x86_64-ubuntu1604-3.4.6/ /home/tools/mongodb-3.4.6</div><div class="line"><span class="meta">#</span><span class="bash"> 进入 mongodb 文件夹</span></div><div class="line">root@das:/home/software# cd /home/tools/mongodb-3.4.6/</div></pre></td></tr></table></figure>
+          <h4 id="1-单机-MongoDB-安装"><a href="#1-单机-MongoDB-安装" class="headerlink" title="1. 单机 MongoDB 安装"></a>1. 单机 MongoDB 安装</h4><p>MongoDB 提供了 linux 各发行版本 64 位的安装包，你可以在官网下载安装包。<br>下载地址：<a href="https://www.mongodb.com/download-center?ct=false#community" target="_blank" rel="external">https://www.mongodb.com/download-center?ct=false#community</a><br>下载完安装包，并解压 tgz（以下演示的是 64 位 ubuntu 上的安装）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 解压 mongoDB 压缩包</div><div class="line">root@das:/home/software# tar -zxvf mongodb-linux-x86_64-ubuntu1604-3.4.6.tgz -C /home/tools/</div><div class="line">root@das:/home/software# mv /home/tools/mongodb-linux-x86_64-ubuntu1604-3.4.6/ /home/tools/mongodb-3.4.6</div><div class="line"><span class="meta">#</span> 进入 mongodb 文件夹</div><div class="line">root@das:/home/software# cd /home/tools/mongodb-3.4.6/</div></pre></td></tr></table></figure>
 <p>配置环境变量 <code>/etc/profile</code> </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> /etc/profile 追加内容 </span></div><div class="line">export MONGODB_HOME=/home/tools/mongodb-3.4.6</div><div class="line">export PATH=$PATH:$MONGODB_HOME/bin</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> 保存，生效环境</span></div><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
-<h4 id="2-创建数据库目录"><a href="#2-创建数据库目录" class="headerlink" title="2. 创建数据库目录"></a>2. 创建数据库目录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span><span class="bash"> 创建目录</span></div><div class="line">root@das:/home/tools/mongodb-3.4.6# mkdir db logs</div><div class="line"><span class="meta">#</span><span class="bash"> 创建配置文件</span></div><div class="line">root@das:/home/tools/mongodb-3.4.6/bin# vim mongodb.conf</div><div class="line"></div><div class="line"><span class="meta">#</span><span class="bash"> db path</span></div><div class="line">dbpath = /home/tools/mongodb-3.4.6/db</div><div class="line"><span class="meta">#</span><span class="bash"> 日志文件存放的位置</span></div><div class="line">logpath = /home/tools/mongodb-3.4.6/logs/mongodb.log</div><div class="line"><span class="meta">#</span><span class="bash"> 端口</span></div><div class="line">port = 27017</div><div class="line"><span class="meta">#</span><span class="bash"> 以守护程序的方式启动，即后台运行</span></div><div class="line">fork = true</div><div class="line"><span class="meta">#</span><span class="bash"> 日志输出的方式</span></div><div class="line">logappend = true</div><div class="line"><span class="meta">#</span><span class="bash"> 设置每个数据库将被保存在一个单独的目录中</span></div><div class="line"><span class="meta">#</span><span class="bash"> directoryerdb = <span class="literal">true</span></span></div><div class="line"><span class="meta">#</span><span class="bash"> 开启认证</span></div><div class="line">auth = false</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> /etc/profile 追加内容 </div><div class="line">export MONGODB_HOME=/home/tools/mongodb-3.4.6</div><div class="line">export PATH=$PATH:$MONGODB_HOME/bin</div><div class="line"></div><div class="line"><span class="meta">#</span> 保存，生效环境</div><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
+<h4 id="2-创建数据库目录"><a href="#2-创建数据库目录" class="headerlink" title="2. 创建数据库目录"></a>2. 创建数据库目录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#</span> 创建目录</div><div class="line">root@das:/home/tools/mongodb-3.4.6# mkdir db logs</div><div class="line"><span class="meta">#</span> 创建配置文件</div><div class="line">root@das:/home/tools/mongodb-3.4.6/bin# vim mongodb.conf</div><div class="line"></div><div class="line"><span class="meta">#</span> db path</div><div class="line">dbpath = /home/tools/mongodb-3.4.6/db</div><div class="line"><span class="meta">#</span> 日志文件存放的位置</div><div class="line">logpath = /home/tools/mongodb-3.4.6/logs/mongodb.log</div><div class="line"><span class="meta">#</span> 端口</div><div class="line">port = 27017</div><div class="line"><span class="meta">#</span> 以守护程序的方式启动，即后台运行</div><div class="line">fork = true</div><div class="line"><span class="meta">#</span> 日志输出的方式</div><div class="line">logappend = true</div><div class="line"><span class="meta">#</span> 设置每个数据库将被保存在一个单独的目录中</div><div class="line"><span class="meta">#</span> directoryerdb = true</div><div class="line"><span class="meta">#</span> 开启认证</div><div class="line">auth = false</div></pre></td></tr></table></figure>
 <h4 id="3-启动-mongodb"><a href="#3-启动-mongodb" class="headerlink" title="3. 启动 mongodb"></a>3. 启动 mongodb</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@das:/home/tools/mongodb-3.4.6/bin# ./mongod -f  mongodb.conf </div><div class="line">about to fork child process, waiting until server is ready for connections.</div><div class="line">forked process: 1011</div><div class="line">child process started successfully, parent exiting</div></pre></td></tr></table></figure>
 <h4 id="4-关闭-mongodb"><a href="#4-关闭-mongodb" class="headerlink" title="4. 关闭 mongodb"></a>4. 关闭 mongodb</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root@das:/home/tools/mongodb-3.4.6/bin# ./mongod -f mongodb.conf --shutdown</div><div class="line">killing process with pid: 1011</div></pre></td></tr></table></figure>
           <!--noindex-->
@@ -444,7 +473,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
+      <meta itemprop="name" content="An episode of sb.'s life">
     </span>
 
     
@@ -454,7 +483,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/20/pyInstaller/" itemprop="url">pyInstaller 打包 Python 程序</a></h1>
+                <a class="post-title-link" href="/2017/08/20/pyInstaller/" itemprop="url">PyInstaller 打包 Python 程序</a></h1>
         
 
         <div class="post-meta">
@@ -476,6 +505,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -505,7 +556,7 @@
 
       
         
-          <h3 id="PyInstaller-打包-Python-应用程序案例"><a href="#PyInstaller-打包-Python-应用程序案例" class="headerlink" title="PyInstaller 打包 Python 应用程序案例"></a>PyInstaller 打包 Python 应用程序案例</h3><h4 id="1-Code-structure"><a href="#1-Code-structure" class="headerlink" title="1. Code structure"></a>1. Code structure</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">NodeSlave</div><div class="line">---|[D] conf              # configure folder</div><div class="line">   |--- slave.ini         # configure file</div><div class="line">   |</div><div class="line">---|[D] resource		 # resource folder</div><div class="line">   |--- node.ico		 # icon file [ 128*128 ] </div><div class="line">   |</div><div class="line">---|[D] slave 			 # python package</div><div class="line">---|[D] build			 # pyInstaller generate build folder automatically</div><div class="line">---|[D] dist			 # pyInstaller generate dist folder automatically</div><div class="line">   |---[D] slave_client   # pyInstaller generate program folder</div><div class="line">   |</div><div class="line">---| slave_client.py      # program entrance: main()</div><div class="line">---| slave_client.spec    # pyInstaller spec temporary file</div><div class="line">---| readme.md			 # read me file</div></pre></td></tr></table></figure>
+          <h4 id="1-Code-structure"><a href="#1-Code-structure" class="headerlink" title="1. Code structure"></a>1. Code structure</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">NodeSlave</div><div class="line">---|[D] conf              # configure folder</div><div class="line">   |--- slave.ini         # configure file</div><div class="line">   |</div><div class="line">---|[D] resource		 # resource folder</div><div class="line">   |--- node.ico		 # icon file [ 128*128 ] </div><div class="line">   |</div><div class="line">---|[D] slave 			 # python package</div><div class="line">---|[D] build			 # pyInstaller generate build folder automatically</div><div class="line">---|[D] dist			 # pyInstaller generate dist folder automatically</div><div class="line">   |---[D] slave_client   # pyInstaller generate program folder</div><div class="line">   |</div><div class="line">---| slave_client.py      # program entrance: main()</div><div class="line">---| slave_client.spec    # pyInstaller spec temporary file</div><div class="line">---| readme.md			 # read me file</div></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/08/20/pyInstaller/#more" rel="contents">
@@ -568,7 +619,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
+      <meta itemprop="name" content="An episode of sb.'s life">
     </span>
 
     
@@ -578,7 +629,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/20/linux-swap-settings/" itemprop="url">linux swap settings</a></h1>
+                <a class="post-title-link" href="/2017/08/20/linux-swap-settings/" itemprop="url">云服务器 ECS Linux SWAP 配置概要说明</a></h1>
         
 
         <div class="post-meta">
@@ -600,6 +651,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Code/" itemprop="url" rel="index">
+                    <span itemprop="name">Code</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -629,7 +702,7 @@
 
       
         
-          <h2 id="云服务器-ECS-Linux-SWAP-配置概要说明"><a href="#云服务器-ECS-Linux-SWAP-配置概要说明" class="headerlink" title="云服务器 ECS Linux SWAP 配置概要说明"></a>云服务器 ECS Linux SWAP 配置概要说明</h2><h3 id="SWAP-简介"><a href="#SWAP-简介" class="headerlink" title="SWAP 简介"></a>SWAP 简介</h3><p>Linux 中的 SWAP（交换分区），类似于 Windows 的虚拟内存。系统会把一部分硬盘空间虚拟成内存使用，将系统内非活动内存换页到 SWAP，以提高系统可用内存。</p>
+          <h3 id="SWAP-简介"><a href="#SWAP-简介" class="headerlink" title="SWAP 简介"></a>SWAP 简介</h3><p>Linux 中的 SWAP（交换分区），类似于 Windows 的虚拟内存。系统会把一部分硬盘空间虚拟成内存使用，将系统内非活动内存换页到 SWAP，以提高系统可用内存。</p>
 <h3 id="开启-SWAP"><a href="#开启-SWAP" class="headerlink" title="开启 SWAP"></a>开启 SWAP</h3><p>1、创建用于交换分区的文件：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd if=/dev/zero of=/mnt/swap bs=block_size count=number_of_block</div></pre></td></tr></table></figure>
 <p><strong>注</strong>：block_size、number_of_block 大小可以自定义，比如 bs=1M count=1024 代表设置 1G 大小 SWAP 分区。交换空间一般是物理内存的2倍或4倍</p>
@@ -698,7 +771,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
+      <meta itemprop="name" content="An episode of sb.'s life">
     </span>
 
     
@@ -781,7 +854,7 @@
 
       
         
-          <h2 id="Build-Gitlab-On-Ubuntu-Server"><a href="#Build-Gitlab-On-Ubuntu-Server" class="headerlink" title="Build Gitlab On Ubuntu Server"></a>Build Gitlab On Ubuntu Server</h2><h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
+          <h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
 <p>On CentOS, the commands below will also open HTTP and SSH access in the system firewall.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix -y</div></pre></td></tr></table></figure>
 <h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</div><div class="line">sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
@@ -795,134 +868,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Li Liang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/19/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T22:29:26+08:00">
-                2017-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body han-init-context" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
         
       
     </div>
@@ -1002,7 +947,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1024,7 +969,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1044,6 +989,17 @@
                   
                     
                       GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="lltime90@outlook.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
                     
                 </a>
               </span>
@@ -1098,7 +1054,7 @@
   <div class="theme-info">
     主题 &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-      NexT.Muse
+      NexT.Gemini
     </a>
   </div>
 
@@ -1143,8 +1099,6 @@
   
 
 
-  
-
 
 
 
@@ -1173,9 +1127,6 @@
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
 
   
 
@@ -1188,6 +1139,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
     <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>

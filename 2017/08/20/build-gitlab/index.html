@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,6 +13,13 @@
 <meta name="theme-color" content="#222">
 
 
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -91,25 +98,25 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg?v=5.1.2" />
+  <link rel="shortcut icon" type="image/x-icon" href="http://oursqqcoj.bkt.clouddn.com/17-8-20/19413742.jpg?v=5.1.2" />
 
 
 
 
 
 
-<meta name="description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
+<meta name="description" content="1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or configure a cu">
 <meta name="keywords" content="GitLab,Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="构建 GitLab 服务器 ( Ubuntu 16.04 )">
 <meta property="og:url" content="http://yoursite.com/2017/08/20/build-gitlab/index.html">
-<meta property="og:site_name" content="Snippets">
-<meta property="og:description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
+<meta property="og:site_name" content="An episode of sb.&#39;s life">
+<meta property="og:description" content="1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or configure a cu">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-19T17:39:07.596Z">
+<meta property="og:updated_time" content="2017-08-21T01:35:02.953Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="构建 GitLab 服务器 ( Ubuntu 16.04 )">
-<meta name="twitter:description" content="Build Gitlab On Ubuntu Server1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also u">
+<meta name="twitter:description" content="1. Install and configure the necessary dependenciesIf you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or configure a cu">
 
 
 
@@ -117,7 +124,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
@@ -144,7 +151,7 @@
 
 
 
-  <title>构建 GitLab 服务器 ( Ubuntu 16.04 ) | Snippets</title>
+  <title>构建 GitLab 服务器 ( Ubuntu 16.04 ) | An episode of sb.'s life</title>
   
 
 
@@ -174,7 +181,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Snippets</span>
+        <span class="site-title">An episode of sb.'s life</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -314,7 +321,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Snippets">
+      <meta itemprop="name" content="An episode of sb.'s life">
     </span>
 
     
@@ -394,7 +401,7 @@
       
 
       
-        <h2 id="Build-Gitlab-On-Ubuntu-Server"><a href="#Build-Gitlab-On-Ubuntu-Server" class="headerlink" title="Build Gitlab On Ubuntu Server"></a>Build Gitlab On Ubuntu Server</h2><h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
+        <h4 id="1-Install-and-configure-the-necessary-dependencies"><a href="#1-Install-and-configure-the-necessary-dependencies" class="headerlink" title="1. Install and configure the necessary dependencies"></a>1. Install and configure the necessary dependencies</h4><p>If you install Postfix to send email please select ‘Internet Site’ during setup. Instead of using Postfix you can also use Sendmail or <a href="https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/doc/settings/smtp.md" target="_blank" rel="external">configure a custom SMTP server </a>and configure it as an SMTP server.</p>
 <p>On CentOS, the commands below will also open HTTP and SSH access in the system firewall.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install curl openssh-server ca-certificates postfix -y</div></pre></td></tr></table></figure>
 <h4 id="2-Add-the-GitLab-package-server-and-install-the-package"><a href="#2-Add-the-GitLab-package-server-and-install-the-package" class="headerlink" title="2. Add the GitLab package server and install the package"></a>2. Add the GitLab package server and install the package</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash</div><div class="line">sudo apt-get install gitlab-ce</div></pre></td></tr></table></figure>
@@ -443,18 +450,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/19/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/20/linux-swap-settings/" rel="prev" title="linux swap settings">
-                linux swap settings <i class="fa fa-chevron-right"></i>
+              <a href="/2017/08/20/linux-swap-settings/" rel="prev" title="云服务器 ECS Linux SWAP 配置概要说明">
+                云服务器 ECS Linux SWAP 配置概要说明 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -532,7 +535,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -554,7 +557,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -574,6 +577,17 @@
                   
                     
                       GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="lltime90@outlook.com" target="_blank" title="E-Mail">
+                  
+                    <i class="fa fa-fw fa-envelope"></i>
+                  
+                    
+                      E-Mail
                     
                 </a>
               </span>
@@ -602,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Build-Gitlab-On-Ubuntu-Server"><span class="nav-number">1.</span> <span class="nav-text">Build Gitlab On Ubuntu Server</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Install-and-configure-the-necessary-dependencies"><span class="nav-number">1.0.1.</span> <span class="nav-text">1. Install and configure the necessary dependencies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Add-the-GitLab-package-server-and-install-the-package"><span class="nav-number">1.0.2.</span> <span class="nav-text">2. Add the GitLab package server and install the package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Configure-and-start-GitLab"><span class="nav-number">1.0.3.</span> <span class="nav-text">3. Configure and start GitLab</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Browse-to-the-hostname-and-login"><span class="nav-number">1.0.4.</span> <span class="nav-text">4. Browse to the hostname and login</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Gitlab-congfigure"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.  Gitlab congfigure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-Configuring-the-external-URL-for-GitLab"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">5.1. Configuring the external URL for GitLab</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-Email-configure-about-SMTP"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">5.2.  Email configure about SMTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-设置-HTTPS"><span class="nav-number">1.0.5.3.</span> <span class="nav-text">5.3. 设置 HTTPS</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Install-and-configure-the-necessary-dependencies"><span class="nav-number">1.</span> <span class="nav-text">1. Install and configure the necessary dependencies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Add-the-GitLab-package-server-and-install-the-package"><span class="nav-number">2.</span> <span class="nav-text">2. Add the GitLab package server and install the package</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Configure-and-start-GitLab"><span class="nav-number">3.</span> <span class="nav-text">3. Configure and start GitLab</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-Browse-to-the-hostname-and-login"><span class="nav-number">4.</span> <span class="nav-text">4. Browse to the hostname and login</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Gitlab-congfigure"><span class="nav-number">5.</span> <span class="nav-text">5.  Gitlab congfigure</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-Configuring-the-external-URL-for-GitLab"><span class="nav-number">5.1.</span> <span class="nav-text">5.1. Configuring the external URL for GitLab</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-Email-configure-about-SMTP"><span class="nav-number">5.2.</span> <span class="nav-text">5.2.  Email configure about SMTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-3-设置-HTTPS"><span class="nav-number">5.3.</span> <span class="nav-text">5.3. 设置 HTTPS</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -644,7 +658,7 @@
   <div class="theme-info">
     主题 &mdash;
     <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-      NexT.Muse
+      NexT.Gemini
     </a>
   </div>
 
@@ -689,8 +703,6 @@
   
 
 
-  
-
 
 
 
@@ -719,9 +731,6 @@
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
-
 
   
 
@@ -734,6 +743,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
