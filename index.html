@@ -312,6 +312,232 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/hbase-install/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="An episode of sb.'s life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/24/hbase-install/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T11:17:22+08:00">
+                2017-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HBase/" itemprop="url" rel="index">
+                    <span itemprop="name">HBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>在安装 HBase 前，需要进行以下准备工作</p>
+<h4 id="创建三台虚拟主机"><a href="#创建三台虚拟主机" class="headerlink" title="创建三台虚拟主机"></a>创建三台虚拟主机</h4><p>本文档系统版本为：ubuntu-16.04.2-server-amd64</p>
+<p>说明，本文都是使用root用户安装的，你根据自己的情况在其他的用户上操作。</p>
+<h4 id="配置互通的静态-IP地址"><a href="#配置互通的静态-IP地址" class="headerlink" title="配置互通的静态 IP地址"></a>配置互通的静态 IP地址</h4><table>
+<thead>
+<tr>
+<th style="text-align:center">主机名</th>
+<th style="text-align:center">IP</th>
+<th style="text-align:center">角色</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">ll.das1.com</td>
+<td style="text-align:center">192.168.7.201</td>
+<td style="text-align:center">master</td>
+</tr>
+<tr>
+<td style="text-align:center">ll.das2.com</td>
+<td style="text-align:center">192.168.7.202</td>
+<td style="text-align:center">slave1</td>
+</tr>
+<tr>
+<td style="text-align:center">ll.das3.com</td>
+<td style="text-align:center">192.168.7.203</td>
+<td style="text-align:center">slave2</td>
+</tr>
+</tbody>
+</table>
+<h4 id="修改hosts文件"><a href="#修改hosts文件" class="headerlink" title="修改hosts文件"></a>修改hosts文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">root@ll:/opt/tools/hadoop-2.7.3# cat /etc/hosts</div><div class="line">127.0.0.1       localhost</div><div class="line"></div><div class="line">192.168.7.201   ll.das1.com</div><div class="line">192.168.7.202   ll.das2.com</div><div class="line">192.168.7.203   ll.das3.com</div><div class="line"></div><div class="line"><span class="meta">#</span> The following lines are desirable for IPv6 capable hosts</div><div class="line">::1     localhost ip6-localhost ip6-loopback</div><div class="line">ff02::1 ip6-allnodes</div><div class="line">ff02::2 ip6-allrouters</div></pre></td></tr></table></figure>
+<h4 id="软件准备"><a href="#软件准备" class="headerlink" title="软件准备"></a>软件准备</h4><ul>
+<li><p>openssh-server</p>
+</li>
+<li><p>java</p>
+<p>| HBase Version |    JDK 7    |              JDK 8               |<br>| :———–: | :———: | :——————————: |<br>|      2.0      | Not Support |               yes                |<br>|      1.3      |     yes     |               yes                |<br>|      1.2      |     yes     |               yes                |<br>|      1.1      |     yes     | can work but is not well tested. |</p>
+</li>
+<li><p>zookeeper</p>
+<blockquote>
+<p>ZooKeeper 3.4.x is required. HBase makes use of the <code>multi</code> functionality that is only available since Zookeeper 3.4.0. The <code>hbase.zookeeper.useMulti</code> configuration property defaults to <code>true</code>. Refer to <a href="https://issues.apache.org/jira/browse/HBASE-12241" target="_blank" rel="external">HBASE-12241 (The crash of regionServer when taking deadserver’s replication queue breaks replication)</a> and <a href="https://issues.apache.org/jira/browse/HBASE-6775" target="_blank" rel="external">HBASE-6775 (Use ZK.multi when available for HBASE-6710 0.92/0.94 compatibility fix)</a> for background. The property is deprecated and useMulti is always enabled in HBase 2.0.</p>
+</blockquote>
+</li>
+<li><p>hadoop</p>
+<p>Hadoop version support matrix</p>
+<ul>
+<li>“S” = supported</li>
+<li>“X” = not supported</li>
+<li>“NT” = Not tested</li>
+</ul>
+<p>|                     | HBase-1.1.x | HBase-1.2.x | HBase-1.3.x | HBase-2.0.x |<br>| ——————- | :———: | :———: | :———: | :———: |<br>| Hadoop-2.0.x-alpha  |      X      |      X      |      X      |      X      |<br>| Hadoop-2.1.0-beta   |      X      |      X      |      X      |      X      |<br>| Hadoop-2.2.0        |     NT      |      X      |      X      |      X      |<br>| Hadoop-2.3.x        |     NT      |      X      |      X      |      X      |<br>| Hadoop-2.4.x        |      S      |      S      |      S      |      X      |<br>| Hadoop-2.5.x        |      S      |      S      |      S      |      X      |<br>| Hadoop-2.6.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-2.6.1+       |     NT      |      S      |      S      |      S      |<br>| Hadoop-2.7.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-2.7.1+       |     NT      |      S      |      S      |      S      |<br>| Hadoop-2.8.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-3.0.0-alphax |     NT      |     NT      |     NT      |     NT      |</p>
+</li>
+</ul>
+<ul>
+<li>hbase </li>
+</ul>
+<p>综上所述：本文档使用以下版本：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">版本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">jdk</td>
+<td style="text-align:center">jdk-8u111-linux-x64</td>
+</tr>
+<tr>
+<td style="text-align:center">zookeeper</td>
+<td style="text-align:center">zookeeper-3.4.10</td>
+</tr>
+<tr>
+<td style="text-align:center">hadoop</td>
+<td style="text-align:center">hadoop-2.7.3</td>
+</tr>
+<tr>
+<td style="text-align:center">hbase</td>
+<td style="text-align:center">hbase-1.2.6-bin.tar</td>
+</tr>
+</tbody>
+</table>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/24/hbase-install/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/mongodb-creat/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -947,7 +1173,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -958,7 +1184,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -969,7 +1195,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
