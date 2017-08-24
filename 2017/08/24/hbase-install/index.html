@@ -108,14 +108,14 @@
 <meta name="description" content="准备工作在安装 HBase 前，需要进行以下准备工作 创建三台虚拟主机本文档系统版本为：ubuntu-16.04.2-server-amd64 说明，本文都是使用root用户安装的，你根据自己的情况在其他的用户上操作。 配置互通的静态 IP地址   主机名 IP 角色     ll.das1.com 192.168.7.201 master   ll.das2.com 192.168.7.202">
 <meta name="keywords" content="HBase,ZooKeeper,HDFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="An episode of sb.&#39;s life">
+<meta property="og:title" content="HBase 分布式搭建">
 <meta property="og:url" content="http://yoursite.com/2017/08/24/hbase-install/index.html">
 <meta property="og:site_name" content="An episode of sb.&#39;s life">
 <meta property="og:description" content="准备工作在安装 HBase 前，需要进行以下准备工作 创建三台虚拟主机本文档系统版本为：ubuntu-16.04.2-server-amd64 说明，本文都是使用root用户安装的，你根据自己的情况在其他的用户上操作。 配置互通的静态 IP地址   主机名 IP 角色     ll.das1.com 192.168.7.201 master   ll.das2.com 192.168.7.202">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-24T08:20:35.118Z">
+<meta property="og:updated_time" content="2017-08-24T08:44:52.539Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="An episode of sb.&#39;s life">
+<meta name="twitter:title" content="HBase 分布式搭建">
 <meta name="twitter:description" content="准备工作在安装 HBase 前，需要进行以下准备工作 创建三台虚拟主机本文档系统版本为：ubuntu-16.04.2-server-amd64 说明，本文都是使用root用户安装的，你根据自己的情况在其他的用户上操作。 配置互通的静态 IP地址   主机名 IP 角色     ll.das1.com 192.168.7.201 master   ll.das2.com 192.168.7.202">
 
 
@@ -151,7 +151,7 @@
 
 
 
-  <title> | An episode of sb.'s life</title>
+  <title>HBase 分布式搭建 | An episode of sb.'s life</title>
   
 
 
@@ -329,7 +329,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">HBase 分布式搭建</h1>
         
 
         <div class="post-meta">
@@ -435,8 +435,40 @@
 <li><p>openssh-server</p>
 </li>
 <li><p>java</p>
-<p>| HBase Version |    JDK 7    |              JDK 8               |<br>| :———–: | :———: | :——————————: |<br>|      2.0      | Not Support |               yes                |<br>|      1.3      |     yes     |               yes                |<br>|      1.2      |     yes     |               yes                |<br>|      1.1      |     yes     | can work but is not well tested. |</p>
 </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">HBase Version</th>
+<th style="text-align:center">JDK 7</th>
+<th style="text-align:center">JDK 8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2.0</td>
+<td style="text-align:center">Not Support</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:center">1.3</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:center">1.2</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">yes</td>
+</tr>
+<tr>
+<td style="text-align:center">1.1</td>
+<td style="text-align:center">yes</td>
+<td style="text-align:center">can work but is not well tested.</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>zookeeper</p>
 <blockquote>
 <p>ZooKeeper 3.4.x is required. HBase makes use of the <code>multi</code> functionality that is only available since Zookeeper 3.4.0. The <code>hbase.zookeeper.useMulti</code> configuration property defaults to <code>true</code>. Refer to <a href="https://issues.apache.org/jira/browse/HBASE-12241" target="_blank" rel="external">HBASE-12241 (The crash of regionServer when taking deadserver’s replication queue breaks replication)</a> and <a href="https://issues.apache.org/jira/browse/HBASE-6775" target="_blank" rel="external">HBASE-6775 (Use ZK.multi when available for HBASE-6710 0.92/0.94 compatibility fix)</a> for background. The property is deprecated and useMulti is always enabled in HBase 2.0.</p>
@@ -449,9 +481,105 @@
 <li>“X” = not supported</li>
 <li>“NT” = Not tested</li>
 </ul>
-<p>|                     | HBase-1.1.x | HBase-1.2.x | HBase-1.3.x | HBase-2.0.x |<br>| ——————- | :———: | :———: | :———: | :———: |<br>| Hadoop-2.0.x-alpha  |      X      |      X      |      X      |      X      |<br>| Hadoop-2.1.0-beta   |      X      |      X      |      X      |      X      |<br>| Hadoop-2.2.0        |     NT      |      X      |      X      |      X      |<br>| Hadoop-2.3.x        |     NT      |      X      |      X      |      X      |<br>| Hadoop-2.4.x        |      S      |      S      |      S      |      X      |<br>| Hadoop-2.5.x        |      S      |      S      |      S      |      X      |<br>| Hadoop-2.6.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-2.6.1+       |     NT      |      S      |      S      |      S      |<br>| Hadoop-2.7.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-2.7.1+       |     NT      |      S      |      S      |      S      |<br>| Hadoop-2.8.0        |      X      |      X      |      X      |      X      |<br>| Hadoop-3.0.0-alphax |     NT      |     NT      |     NT      |     NT      |</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">HBase-1.1.x</th>
+<th style="text-align:center">HBase-1.2.x</th>
+<th style="text-align:center">HBase-1.3.x</th>
+<th style="text-align:center">HBase-2.0.x</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hadoop-2.0.x-alpha</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.1.0-beta</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.2.0</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.3.x</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.4.x</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.5.x</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.6.0</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.6.1+</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+</tr>
+<tr>
+<td>Hadoop-2.7.0</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-2.7.1+</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+<td style="text-align:center">S</td>
+</tr>
+<tr>
+<td>Hadoop-2.8.0</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td>Hadoop-3.0.0-alphax</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">NT</td>
+<td style="text-align:center">NT</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>hbase </li>
 </ul>
