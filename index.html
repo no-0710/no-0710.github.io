@@ -413,7 +413,8 @@
 <p>主要是用来<strong>监控系统性能</strong>，如 <strong>CPU、内存、磁盘使用率，I/O 负载、网络流量情况</strong>等。</p>
 <p>ganglia 采用多层次的结构模式，使得其可以实现<strong>良好的扩展</strong>。</p>
 <p>gmond 带来的<strong>系统负载非常少</strong>，这使得它成为在集群中各台计算机上运行的程序，而不会影响用户性能。</p>
-<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><ul>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><p><img src="http://oursqqcoj.bkt.clouddn.com/17-8-25/16290776.jpg" alt=""></p>
+<ul>
 <li><strong>gmond</strong> 是一个守护进程，运行在每个需要监控的节点上，收集监控统计，发送和接受在同一个组播或是单播通道上的统计信息</li>
 <li><strong>gmetad</strong> 也是一个守护进程，它会定期检查 gmond，从那里拉取数据，并将其存储在 RRD 存储引擎中。其也可以查询多个集群并聚合信息。</li>
 <li><strong>ganglia-web</strong> 读取 RRD 文件，动态生成各类性能监控图表，并提供 web 服务。</li>
