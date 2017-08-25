@@ -312,6 +312,165 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/use-ganglia-monitor-hbase/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Li Liang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oursqqcoj.bkt.clouddn.com/17-8-20/52254722.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="An episode of sb.'s life">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/25/use-ganglia-monitor-hbase/" itemprop="url">配置 Ganglia 监控 HBase</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T15:09:47+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HBase/" itemprop="url" rel="index">
+                    <span itemprop="name">HBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Ganglia-简介"><a href="#Ganglia-简介" class="headerlink" title="Ganglia 简介"></a>Ganglia 简介</h3><p>有兴趣的可以去看看其论文：</p>
+<ul>
+<li><a href="http://www.ece.cmu.edu/~ece845/docs/massie04.pdf" target="_blank" rel="external">The ganglia distributed monitoring system: design, implementation, and experience</a></li>
+<li><a href="http://web.mit.edu/acis/labs/hpc/4.1/papers/cluster2003-ganglia.pdf" target="_blank" rel="external">Wide area cluster monitoring with Ganglia</a></li>
+</ul>
+<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><p>由 UC Berkeley 发起的一个开源集群监视项目，设计用于<strong>测量和监控数以千计的节点</strong>。</p>
+<p>主要是用来<strong>监控系统性能</strong>，如 <strong>CPU、内存、磁盘使用率，I/O 负载、网络流量情况</strong>等。</p>
+<p>ganglia 采用多层次的结构模式，使得其可以实现<strong>良好的扩展</strong>。</p>
+<p>gmond 带来的<strong>系统负载非常少</strong>，这使得它成为在集群中各台计算机上运行的程序，而不会影响用户性能。</p>
+<h4 id="组件"><a href="#组件" class="headerlink" title="组件"></a>组件</h4><ul>
+<li><strong>gmond</strong> 是一个守护进程，运行在每个需要监控的节点上，收集监控统计，发送和接受在同一个组播或是单播通道上的统计信息</li>
+<li><strong>gmetad</strong> 也是一个守护进程，它会定期检查 gmond，从那里拉取数据，并将其存储在 RRD 存储引擎中。其也可以查询多个集群并聚合信息。</li>
+<li><strong>ganglia-web</strong> 读取 RRD 文件，动态生成各类性能监控图表，并提供 web 服务。</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/25/use-ganglia-monitor-hbase/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/hbase-web-manager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1285,7 +1444,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1307,7 +1466,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
